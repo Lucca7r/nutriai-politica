@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Política de Privacidade - [NOME DO SEU APLICATIVO]</title>
+    <style>
+        body { font-family: sans-serif; line-height: 1.6; padding: 20px; max-width: 800px; margin: auto; }
+        h1, h2 { color: #333; }
+        code { background-color: #f4f4f4; padding: 2px 4px; border-radius: 4px; }
+    </style>
+</head>
+<body>
+    <h1>Política de Privacidade do [NOME DO SEU APLICATIVO]</h1>
+    <p><strong>Data da última atualização:</strong> 09 de novembro de 2025</p>
+
+    <p>Esta Política de Privacidade descreve como [NOME DO SEU APLICATIVO] (referido como "nós" ou "nosso") coleta, usa e compartilha informações sobre você quando você utiliza nosso aplicativo móvel.</p>
+
+    <h2>1. Quais Dados Coletamos</h2>
+    <p>Coletamos informações que você nos fornece diretamente para o funcionamento do aplicativo:</p>
+    <ul>
+        <li><strong>Informações de Conta:</strong> Nome, endereço de e-mail e senha (criptografada) quando você se cadastra (<code>CadastroScreen.tsx</code>).</li>
+        <li><strong>Informações de Login Social:</strong> Se você usar o Login com Google, recebemos seu nome, e-mail e URL da foto de perfil, conforme fornecido pelo Google (<code>LoginScreen.tsx</code>).</li>
+        <li><strong>Informações de Saúde e Fitness (Dados Sensíveis):</strong> Coletamos dados essenciais para os cálculos e personalização do app, incluindo:
+            <ul>
+                <li>Idade</li>
+                <li>Gênero</li>
+                <li>Altura</li>
+                <li>Peso (e histórico de peso)</li>
+                <li>Objetivo (ex: "Perder peso", "Manter peso")</li>
+                <li>Restrições Alimentares</li>
+            </ul>
+            (coletados em <code>FormularioScreen.tsx</code>)
+        </li>
+        <li><strong>Dados de Uso:</strong> Informações sobre suas refeições registradas (descrição, tipo e calorias) (<code>DailyLogScreen.tsx</code>).</li>
+        <li><strong>Conteúdo do Chat:</strong> As mensagens que você troca com nossa assistente de IA para obter dicas e receitas (<code>ChatScreen.tsx</code>).</li>
+        <li><strong>Conteúdo do Usuário:</strong> Fotos de perfil que você opcionalmente nos envia (<code>EditProfileScreen.tsx</code>).</li>
+    </ul>
+
+    <h2>2. Como Usamos Seus Dados</h2>
+    <p>Usamos os dados coletados para:</p>
+    <ul>
+        <li>Fornecer, operar e manter o aplicativo.</li>
+        <li>Criar e gerenciar sua conta de usuário.</li>
+        <li>Calcular suas necessidades calóricas diárias e macronutrientes (<code>nutritionCalculator.ts</code>).</li>
+        <li>Personalizar sua experiência, fornecendo dicas, receitas e respostas de chat com IA adaptadas aos seus objetivos e restrições.</li>
+        <li>Monitorar seu progresso de peso e calorias.</li>
+    </ul>
+
+    <h2>3. Compartilhamento de Dados com Terceiros</h2>
+    <p>Somos transparentes sobre com quem seus dados são compartilhados. Não vendemos seus dados. O compartilhamento ocorre nos seguintes casos:</p>
+    <ul>
+        <li><strong>Firebase (Google):</strong> Usamos os serviços do Firebase para:
+            <ul>
+                <li><strong>Autenticação:</strong> Gerenciar o login (e-mail/senha e Google Sign-In).</li>
+                <li><strong>Firestore (Banco de Dados):</strong> Armazenar com segurança seus dados de conta, perfil, formulário de saúde, refeições e histórico de peso.</li>
+                <li><strong>Storage:</strong> Armazenar as fotos de perfil que você envia.</li>
+            </ul>
+            (configurado em <code>firebaseConfig.ts</code>)
+        </li>
+        <li style="background-color: #fff3cd; padding: 10px; border-radius: 5px;">
+            <strong>OpenAI (Inteligência Artificial):</strong> Para fornecer as funcionalidades de chat inteligente, geração de receitas e análise de refeições, <strong>enviamos partes dos seus dados</strong> (como seu perfil de saúde, restrições alimentares e as mensagens que você digita no chat) para a API da OpenAI (criadora do GPT).
+            (configurado em <code>openaiService.ts</code>)
+        </li>
+    </ul>
+
+    <h2>4. Isenção de Responsabilidade Médica e de Saúde</h2>
+    <p>O [NOME DO SEU APLICATIVO] é uma ferramenta de rastreamento e informação nutricional. As informações, dicas, receitas e cálculos (incluindo calorias) são gerados por Inteligência Artificial (<code>openaiService.ts</code>) e estimativas (<code>nutritionCalculator.ts</code>).</p>
+    <p><strong>Este aplicativo não fornece aconselhamento médico.</strong> Ele não substitui a consulta, diagnóstico ou tratamento de um profissional de saúde qualificado (como um médico ou nutricionista). Sempre consulte um profissional de saúde antes de tomar decisões sobre sua dieta ou saúde.</p>
+
+    <h2>5. Seus Direitos e Exclusão de Conta</h2>
+    <p>A Google Play Store exige que aplicativos que permitem a criação de contas também forneçam um método para a exclusão da conta e dos dados associados.</p>
+    <p>Você pode solicitar a exclusão permanente de sua conta e de todos os seus dados (incluindo perfil, formulário de saúde, histórico de peso e refeições) a qualquer momento.</p>
+    <ul>
+        <li><strong>No aplicativo:</strong> Acesse a tela "Editar Perfil" (<code>EditProfileScreen.tsx</code>) e use a opção "Excluir Conta". <em>(Nota: Você DEVE implementar esta funcionalidade)</em></li>
+        <li><strong>Por e-mail:</strong> Se não conseguir pelo app, envie um e-mail para <strong>[SEU E-MAIL DE CONTATO/SUPORTE]</strong> com o assunto "Exclusão de Conta" e o e-mail que você usou para se cadastrar.</li>
+    </ul>
+
+    <h2>6. Segurança dos Dados</h2>
+    <p>Empregamos medidas de segurança para proteger seus dados, como o uso de serviços seguros (Firebase) e comunicação criptografada. No entanto, nenhum método de transmissão pela Internet é 100% seguro.</p>
+
+    <h2>7. Contato</h2>
+    <p>Se você tiver qualquer dúvida sobre esta Política de Privacidade, entre em contato conosco pelo e-mail: <strong>[SEU E-MAIL DE CONTATO/SUPORTE]</strong>.</p>
+</body>
+</html>
